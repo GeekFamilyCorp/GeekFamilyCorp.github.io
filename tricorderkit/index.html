@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TricorderKit — the local-first second brain for your AI agents</title>
+<meta name="description" content="Open-source, local-first second brain for AI agents: measured, self-improving, and gated so it can't leak what you keep private. 13 Claude Code plugins, 21 skills. MIT.">
+<link rel="canonical" href="https://geekfamilycorp.com/tricorderkit/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TricorderKit — the local-first second brain for your AI agents">
+<meta property="og:description" content="Measured, self-improving, and gated so it can't leak what you keep private. 13 Claude Code plugins, 21 skills, MIT.">
+<meta property="og:url" content="https://geekfamilycorp.com/tricorderkit/">
+<meta property="og:image" content="https://geekfamilycorp.com/tricorderkit/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@GeekFamilyCorp">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"TricorderKit","applicationCategory":"DeveloperApplication","operatingSystem":"Windows, macOS, Linux","license":"https://opensource.org/licenses/MIT","url":"https://geekfamilycorp.com/tricorderkit/","codeRepository":"https://github.com/GeekFamilyCorp/TricorderKit","softwareVersion":"1.2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"GeekFamilyCorp","url":"https://geekfamilycorp.com/"}}
+</script>
+<style>
+:root{--bg:#0b0f17;--panel:#111827;--line:#1f2937;--text:#e5e7eb;--sub:#9ca3af;--teal:#2dd4bf;--violet:#a78bfa;--amber:#fbbf24;--red:#f87171;--btn:#2dd4bf;--btntext:#04201c;color-scheme:dark}
+@media (prefers-color-scheme: light){:root{--bg:#ffffff;--panel:#f8fafc;--line:#e2e8f0;--text:#0f172a;--sub:#475569;--teal:#0d9488;--violet:#7c3aed;--amber:#b45309;--red:#dc2626;--btn:#0d9488;--btntext:#ffffff;color-scheme:light}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 Inter,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:var(--teal)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-size:15px}
+nav .brand{font-weight:800;color:var(--text);text-decoration:none;letter-spacing:.2px}
+nav .links a{margin-left:20px;color:var(--sub);text-decoration:none}
+nav .links a:hover{color:var(--text)}
+.hero img{width:100%;height:auto;border-radius:16px;display:block}
+.hero .light{display:none}
+@media (prefers-color-scheme: light){.hero .dark{display:none}.hero .light{display:block}}
+h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:36px 0 10px}
+h2{font-size:clamp(24px,3.4vw,32px);margin:72px 0 14px}
+.lead{font-size:19px;color:var(--sub);max-width:760px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 8px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:700;text-decoration:none;border:1.5px solid var(--line)}
+.btn.primary{background:var(--btn);color:var(--btntext);border-color:var(--btn)}
+.btn.ghost{color:var(--text)}
+.install{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:18px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;overflow-x:auto}
+.install code{flex:1;white-space:nowrap}
+.install button{font:inherit;font-size:13px;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+.stat b{display:block;font-size:24px;color:var(--teal);line-height:1.2}
+.stat span{display:block;color:var(--sub);font-size:14px;margin-top:6px}
+.stat a{font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p{margin:0;color:var(--sub);font-size:15px}
+.demo img,.arch img{width:100%;height:auto;display:block;border-radius:12px}
+.arch .light{display:none}
+@media (prefers-color-scheme: light){.arch .dark{display:none}.arch .light{display:block}}
+.note{color:var(--sub);font-size:14px;margin-top:10px}
+.field{border-left:4px solid var(--violet);padding:4px 0 4px 18px;margin:14px 0}
+.field p{margin:6px 0;color:var(--text)}
+footer{margin:90px 0 40px;padding-top:24px;border-top:1px solid var(--line);color:var(--sub);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media (max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}nav .links a{margin-left:12px}}
+@media (max-width:480px){.stats{grid-template-columns:1fr}nav .links .hide-s{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="https://geekfamilycorp.com/">GeekFamilyCorp</a>
+    <span class="links">
+      <a href="#proof" class="hide-s">Proof</a>
+      <a href="#demo" class="hide-s">Demo</a>
+      <a href="#install">Install</a>
+      <a href="https://github.com/GeekFamilyCorp/TricorderKit">GitHub</a>
+    </span>
+  </nav>
+
+  <section class="hero">
+    <img class="dark" src="hero-dark.svg" alt="TricorderKit — the local-first second brain for your AI agents" width="1280" height="520">
+    <img class="light" src="hero-light.svg" alt="" width="1280" height="520">
+    <h1>Give your AI agents a second brain — one that can't leak.</h1>
+    <p class="lead">TricorderKit is an open-source, local-first knowledge OS for AI agents. Every intention becomes a traceable workflow, every claim is measured, and every push goes through gates that stop secrets and private names before they leave your machine.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/GeekFamilyCorp/TricorderKit">★ Star on GitHub</a>
+      <a class="btn ghost" href="#install">Install in one line</a>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="stats">
+      <div class="stat"><b>100 % vs 33–50 %</b><span>multi-hop answers found — GraphRAG vs flat RAG, same budget</span><a href="https://github.com/GeekFamilyCorp/TricorderKit/tree/main/experiments/graphrag">reproduce</a></div>
+      <div class="stat"><b>−84 % tokens</b><span>to answer "what was true at T" — temporal memory, 100 % exact</span><a href="https://github.com/GeekFamilyCorp/TricorderKit/tree/main/experiments/temporal_memory">reproduce</a></div>
+      <div class="stat"><b>−82 % comparisons</b><span>to find duplicates, same F1 as exhaustive fuzzy matching</span><a href="https://github.com/GeekFamilyCorp/TricorderKit/tree/main/experiments/dedup_embeddings">reproduce</a></div>
+      <div class="stat"><b>4 gates</b><span>on every push, locally and in CI — secrets, private names, docs, contracts</span><a href="https://github.com/GeekFamilyCorp/TricorderKit/actions">see CI</a></div>
+    </div>
+    <p class="note">Every figure comes from a selftest shipped in the repository (re-run on 28 October 2026). No inflated metrics.</p>
+  </section>
+
+  <section id="demo" class="demo">
+    <h2>See the guardrails work</h2>
+    <p class="lead">A private name slips into a note. The pre-push hook blocks it before anything leaves the machine — and because CI logs are public, it reports a digest, never the name. Real output, recorded with the repository's own hook.</p>
+    <img src="demo-gates.svg" alt="Real output: the pre-push gate blocks a private name, then lets the neutral version through" width="980" height="420">
+  </section>
+
+  <section>
+    <h2>What you get</h2>
+    <div class="grid">
+      <div class="card"><h3>13 Claude Code plugins</h3><p>Hybrid RAG (graphify), deep research, workflows on Temporal, memory boot, evaluation lab, security audit — one marketplace.</p></div>
+      <div class="card"><h3>21 method skills</h3><p>Model routing and budgets, context compression, agent-config audit, skill evals, development protocol — no data, no Docker.</p></div>
+      <div class="card"><h3>Local-first</h3><p>Ollama, Neo4j and Qdrant on your machine — or on a server you own. Cloud models are optional, never required.</p></div>
+      <div class="card"><h3>Measured</h3><p>Offline benchmarks with selftests, 579 tests in CI, live badges instead of static claims.</p></div>
+      <div class="card"><h3>Self-improving, safely</h3><p>The learning loop only writes proposals. Promotion needs green tests and a human review.</p></div>
+      <div class="card"><h3>Gated</h3><p>gitleaks, a private-name boundary gate, docs-sync and plugin contracts — pre-push hook and CI.</p></div>
+    </div>
+  </section>
+
+  <section class="arch">
+    <h2>How it fits together</h2>
+    <img class="dark" src="architecture-dark.svg" alt="Architecture: intention, MainBrain, skills, memory, workflows, self-improving loop, eval-lab, hybrid RAG, research, knowledge base, behind quality gates" width="1200" height="600">
+    <img class="light" src="architecture-light.svg" alt="" width="1200" height="600">
+  </section>
+
+  <section>
+    <h2>Field notes from a real project</h2>
+    <div class="field">
+      <p><b>Not a demo.</b> TricorderKit runs every day behind a private knowledge-base project. The public engine stays generic; the domain lives in a private linked repository.</p>
+      <p><b>The anti-leak gate comes from a real incident.</b> In October 2026, content from that private project slipped into the public repository through a whitelist that exempted whole folders. We fixed the cause, neutralised the engine, and restarted the public history from a clean commit.</p>
+      <p><b>Gates find bugs in the gates.</b> Recording the demo above revealed that the pre-push hook was not executable on Linux and macOS. Fixed in the same release.</p>
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>Install in one line</h2>
+    <p class="lead">Inside Claude Code:</p>
+    <div class="install"><code id="cmd">/plugin marketplace add GeekFamilyCorp/TricorderKit</code><button type="button" id="copy">Copy</button></div>
+    <p class="lead">Then pick a plugin, for example <code>/plugin install graphify@tricorderkit</code>. The full local engine is one <code>git clone</code> away — see the <a href="https://github.com/GeekFamilyCorp/TricorderKit#-quick-start">quick start</a>.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/GeekFamilyCorp/TricorderKit">★ Star on GitHub</a>
+      <a class="btn ghost" href="https://github.com/GeekFamilyCorp/TricorderKit/discussions">Join the discussion</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>TricorderKit v1.2.0 · MIT · by <a href="https://geekfamilycorp.com/">GeekFamilyCorp</a></span>
+    <span><a href="https://github.com/GeekFamilyCorp/TricorderKit">GitHub</a> · <a href="https://x.com/GeekFamilyCorp">X</a></span>
+  </footer>
+</div>
+<script>
+document.getElementById('copy').addEventListener('click', function () {
+  var t = document.getElementById('cmd').textContent, b = this;
+  function done(){ b.textContent = 'Copied'; setTimeout(function(){ b.textContent = 'Copy'; }, 1600); }
+  if (navigator.clipboard) { navigator.clipboard.writeText(t).then(done, function(){}); }
+});
+</script>
+</body>
+</html>
